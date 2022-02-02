@@ -1,4 +1,4 @@
-package com.harbour.springintro.annotations;
+package com.harbour.springintroduction.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

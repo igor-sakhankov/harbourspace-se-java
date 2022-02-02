@@ -1,4 +1,4 @@
-package com.harbour.springintro.xml;
+package com.harbour.springintroduction.xml;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

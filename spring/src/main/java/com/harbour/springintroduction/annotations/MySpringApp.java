@@ -1,4 +1,4 @@
-package com.harbour.springintro.annotations;
+package com.harbour.springintroduction.annotations;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
