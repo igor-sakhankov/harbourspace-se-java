@@ -1,10 +1,10 @@
 package com.harbour.springintroduction.annotations;
 
 public class Engineer {
-    private final CoffeeCup coffeeCup;
+    private final CoffeeCup test;
 
     public Engineer(CoffeeCup coffeeCup) {
-        this.coffeeCup = coffeeCup;
+        this.test = coffeeCup;
 
         System.out.println("Engineer created with coffee: " + coffeeCup.getType());
     }

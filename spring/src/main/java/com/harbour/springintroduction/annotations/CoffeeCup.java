@@ -10,5 +10,6 @@ public class CoffeeCup {
 
     public CoffeeCup(String type) {
         this.type = type;
+        System.out.println("Coffee is served");
     }
 }

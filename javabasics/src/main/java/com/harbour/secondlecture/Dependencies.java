@@ -10,8 +10,4 @@ public class Dependencies {
             .getMethod("hasMilk", null);
 
     }
-
-    public static void main(String[] args) throws NoSuchMethodException {
-        new Dependencies(new Object());
-    }
 }

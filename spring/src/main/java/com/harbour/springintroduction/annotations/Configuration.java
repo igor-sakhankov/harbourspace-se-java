@@ -6,12 +6,17 @@ import org.springframework.context.annotation.Bean;
 public class Configuration {
 
     @Bean
-    CoffeeCup coffeeCup() {
+    CoffeeCup coffee() {
         return new CoffeeCup("cappuccino");
     }
 
     @Bean
-    Engineer engineer() {
-        return new Engineer(coffeeCup());
+    CoffeeCup coffee2() {
+        return new CoffeeCup("cappuccino");
+    }
+
+    @Bean
+    Engineer engineer(CoffeeCup coffeeCup) {
+        return new Engineer(coffeeCup);
     }
 }
