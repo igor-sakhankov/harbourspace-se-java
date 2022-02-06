@@ -1,11 +1,11 @@
 package com.harbour.springintroduction.annotations;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Engineer {
-    private final CoffeeCup test;
 
-    public Engineer(CoffeeCup coffeeCup) {
-        this.test = coffeeCup;
-
-        System.out.println("Engineer created with coffee: " + coffeeCup.getType());
-    }
+    @Autowired
+    QualityEngineer qualityEngineer;
 }

@@ -1,18 +1,15 @@
 package com.harbour.springintroduction.annotations;
 
+import java.util.EmptyStackException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class QualityEngineer {
 
-    @Autowired
-    private CoffeeCup coffeeCup;
+    private final Engineer qa;
 
-    @Override
-    public String toString() {
-        return "QualityEngineer{" +
-            "coffeeCup=" + coffeeCup +
-            '}';
+    public QualityEngineer(Engineer qa) {
+        this.qa = qa;
     }
 }

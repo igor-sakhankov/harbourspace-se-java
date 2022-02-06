@@ -3,7 +3,7 @@ package com.harbour.thirdlecture.accessmodifiers.onepackage;
 import java.util.Objects;
 
 public class AClass {
-    private int myIntField;
+    int myIntField;
     private String myString;
 
     @Override

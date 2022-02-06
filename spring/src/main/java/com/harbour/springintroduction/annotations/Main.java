@@ -1,5 +1,7 @@
 package com.harbour.springintroduction.annotations;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
@@ -8,9 +10,7 @@ public class Main {
 
         var context = new AnnotationConfigApplicationContext(Configuration.class);
 
-        final var coffeeCup = context.getBean("coffeeCup", CoffeeCup.class);
-
-        System.out.println(coffeeCup.getType());
+        System.out.println("tree");
     }
 
 }
