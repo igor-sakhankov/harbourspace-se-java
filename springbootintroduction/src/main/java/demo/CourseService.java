@@ -16,6 +16,6 @@ public class CourseService {
 
     @PostConstruct
     public void startCourse() {
-        System.out.println("Greetings from " + this.lector.getName());
+        System.out.println("Greetings from the one and only " + this.lector.getName());
     }
 }
