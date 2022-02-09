@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class FirstController {
+public class HelloController {
 
     @Autowired
     @Qualifier("Vasya") Lector lector;
