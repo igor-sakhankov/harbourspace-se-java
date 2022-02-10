@@ -14,11 +14,11 @@ public class Person {
 		this.id = id;
 	}
 
-	public String getFirstName() {
+	public String getName() {
 		return name;
 	}
 
-	public void setFirstName(String firstName) {
-		this.name = firstName;
+	public void setName(String name) {
+		this.name = name;
 	}
 }
