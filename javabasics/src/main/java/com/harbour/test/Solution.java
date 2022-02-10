@@ -15,11 +15,3 @@ class Solution {
         return xString.equals(rev);
     }
 }
-class Palindrome {
-    public static void main(String[] args) {
-
-
-        final var palindrome = Quiz2.isPalindrome(121212);
-        System.out.println(palindrome);
-    }
-}
