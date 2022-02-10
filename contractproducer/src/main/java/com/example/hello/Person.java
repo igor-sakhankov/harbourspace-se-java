@@ -37,4 +37,26 @@ class Person {
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
+
+
+	protected static boolean isPalindrome(int p) {
+		final var s = String.valueOf(p);
+		if(s.charAt(0) != s.charAt(s.length() - 1)) {
+			return false;
+		}
+
+		return false;
+	}
+
+	private static void test() {
+		isEqual(true, isPalindrome(121));
+		isEqual(false, isPalindrome(123));
+		isEqual(true, isPalindrome(1));
+	}
+
+	private static void isEqual(boolean expected, boolean given) {
+		if( expected != given) {
+			throw new RuntimeException("TEST IS FAILING");
+		}
+	}
 }
