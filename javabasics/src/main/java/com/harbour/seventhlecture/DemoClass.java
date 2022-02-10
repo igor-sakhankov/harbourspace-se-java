@@ -18,18 +18,6 @@ public class DemoClass {
         System.out.println(s.substring(0, 3));
     }
 
-    /**
-     *
-     * @param args
-     */
-    public static void main(String[] args) {
-        // single line comment
-        /*
-         * multiline comment
-         */
-        DemoClass.someMethod();
-    }
-
     public String tooManyComments(int a) {
         someMethod(); //calling someMethod
         if(a == 5)  { // if a = 5

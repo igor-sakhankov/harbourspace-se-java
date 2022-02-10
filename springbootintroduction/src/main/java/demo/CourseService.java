@@ -14,8 +14,11 @@ public class CourseService {
         this.lector = lector;
     }
 
-    @PostConstruct
-    public void startCourse() {
-        System.out.println("Greetings from the one and only " + this.lector.getName());
+    public int startCourse() {
+        if (!lector.isThereAQuizToday()) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 }

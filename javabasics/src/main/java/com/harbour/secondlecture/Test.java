@@ -2,7 +2,7 @@ package com.harbour.secondlecture;
 
 public class Test {
 
-    public static void main(String[] args) {
+    private static void extracted() {
         final var softwareEngineer = new SoftwareEngineer(new BlackCoffee("sdfsd"));
         if(softwareEngineer.addMilk() == true) {
             throw new RuntimeException();

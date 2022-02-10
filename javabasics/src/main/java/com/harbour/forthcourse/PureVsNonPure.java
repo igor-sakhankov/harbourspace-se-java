@@ -8,7 +8,7 @@ public class PureVsNonPure {
         this.counter = this.counter + a;
         return this.counter;
     }
-    public static void main(String[] args) {
+    private static void extracted() {
         final var pureVsNonPure = new PureVsNonPure();
 
         final var i = pureVsNonPure.functionA(2, 2);
@@ -25,6 +25,5 @@ public class PureVsNonPure {
         System.out.println(i4);
         System.out.println(i5);
         System.out.println(i6);
-
     }
 }

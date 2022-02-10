@@ -1,5 +1,6 @@
 package demo;
 
+import java.util.Random;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -7,5 +8,10 @@ import lombok.RequiredArgsConstructor;
 @Getter
 public class Lector {
 
-     final String name;
+    final String name;
+
+    public boolean isThereAQuizToday() {
+        var r = new Random();
+        return r.nextBoolean();
+    }
 }

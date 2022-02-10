@@ -7,6 +7,8 @@
     <module>javabasics</module>
     <module>springbootintroduction</module>
     <module>spring</module>
+    <module>contractproducer</module>
+    <module>contractconsumer</module>
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>
