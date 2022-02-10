@@ -17,13 +17,13 @@ class ContractconsumerApplicationTests {
     void contextLoads() {
     }
 
-    @RegisterExtension
+//    @RegisterExtension
     public StubRunnerExtension stubRunner = new StubRunnerExtension()
         .downloadStub("com.example", "contractproducer", "0.0.1-SNAPSHOT", "stubs")
         .withPort(8100)
         .stubsMode(StubRunnerProperties.StubsMode.LOCAL);
 
-    @Test
+//    @Test
     public void get_person_from_service_contract() {
         // given:
         RestTemplate restTemplate = new RestTemplate();
