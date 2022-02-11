@@ -19,7 +19,6 @@ import org.springframework.stereotype.Service;
 public class WeatherService {
 
     private final WeatherRepository weatherRepository;
-    private final DataSource dataSource;
 
     /**
      * Fetch the Weather in a specific place and save it to db.
@@ -35,15 +34,9 @@ public class WeatherService {
     }
 
     @SneakyThrows
-    public List<String> fetchWeather(String id) {
-        final var connection = dataSource.getConnection();
-        final var query = "SELECT * FROM weather where id = ";
-        final var resultSet = connection.createStatement()
-                                        .executeQuery(query + id);
-        var result = new ArrayList<String>();
-        while (resultSet.next()) {
-            result.add(resultSet.getString("summary"));
-        }
-        return result;
+    public List<String> fetchWeather(long id) {
+        return weatherRepository.findById(id)
+            .map(w -> List.of(w.getSummary()))
+            .orElse(List.of());
     }
 }

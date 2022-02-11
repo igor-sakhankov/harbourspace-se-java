@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"com.harbour.test","c":"Solution","l":"isPalindrome(int)"},{"p":"com.harbour.test","c":"Solution","l":"Solution()","u":"%3Cinit%3E()"}];updateSearchResults();
