@@ -52,7 +52,7 @@ public class WeatherController {
     }
 
     @GetMapping(value = "/weather_sql/{id}")
-    public List<String> weatherSql(@PathVariable String id) {
+    public List<String> weatherSql(@PathVariable long id) {
         return weatherService.fetchWeather(id);
     }
 }
