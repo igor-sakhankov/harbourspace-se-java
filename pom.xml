@@ -8,6 +8,7 @@
     <module>springbootintroduction</module>
     <module>spring</module>
     <module>contractproducer</module>
+    <module>weather</module>
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>
