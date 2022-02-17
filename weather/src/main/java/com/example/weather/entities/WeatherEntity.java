@@ -6,17 +6,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @NoArgsConstructor
+@Getter
 @Table(name = "weather")
 public class WeatherEntity {
 
-    public WeatherEntity(String latitude, String longitude, String summary) {
+    public WeatherEntity(String latitude, String longitude, String summary, String newFieldShouldNotBeVisibleToTheUser) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.summary = summary;
+        this.newFieldShouldNotBeVisibleToTheUser = newFieldShouldNotBeVisibleToTheUser;
     }
 
     @Id
@@ -33,22 +36,8 @@ public class WeatherEntity {
     @Column
     private String summary;
 
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getLatitude() {
-        return latitude;
-    }
-
-    public String getLongitude() {
-        return longitude;
-    }
-
-    public String getSummary() {
-        return summary;
-    }
+    @Column
+    private String newFieldShouldNotBeVisibleToTheUser;
 
     @Override
     public boolean equals(Object o) {
