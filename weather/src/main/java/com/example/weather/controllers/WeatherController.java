@@ -5,6 +5,8 @@ import static org.springframework.http.ResponseEntity.ok;
 import com.example.weather.entities.WeatherEntity;
 import com.example.weather.services.WeatherService;
 import java.util.List;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,10 +20,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WeatherController {
 
+    private Log log = LogFactory.getLog(getClass());
+
     private final WeatherService weatherService;
 
     @Autowired
     public WeatherController(final WeatherService weatherService) {
+        log.error("Wong");
         this.weatherService = weatherService;
     }
 
@@ -29,15 +34,25 @@ public class WeatherController {
      * Weather service URL path.
      */
     @GetMapping("/weather")
-    public ResponseEntity<WeatherEntity> weather() {
-        final var weatherEntity = weatherService.fetchWeather()
-                                                .orElseThrow(() -> new RuntimeException(
-                                                    "Sorry, I couldn't fetch the weather for you :("));
-        return new ResponseEntity<>(weatherEntity, HttpStatus.OK);
+    public ResponseEntity<WeatherVM> weather() {
+        log.trace("The weather was requested");
+        WeatherVM weatherVM = null;
+        try {
+            weatherVM = weatherService.fetchWeather()
+                                      .map(w -> new WeatherVM(w.getSjfhsdkljhfs(), w.getLongitude(),
+                                          w.getSummary()))
+                                      .orElseThrow(() -> new IllegalArgumentException(
+                                          "Sorry, I couldn't fetch the weather for you :("));
+        } catch (Throwable e) {
+            log.info("Sorry, I couldn't fetch the weather for you :(");
+        }
+        log.info("GET Werther response was sent");
+        return new ResponseEntity<>(weatherVM, HttpStatus.OK);
     }
 
     @PostMapping("/weather")
     public ResponseEntity<Void> addWeather(@RequestBody final WeatherEntity entity) {
+        log.trace("Customer ID: .... | The weather was created");
         weatherService.addWeather(entity);
         return ok().build();
     }

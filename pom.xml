@@ -7,7 +7,6 @@
     <module>javabasics</module>
     <module>springbootintroduction</module>
     <module>spring</module>
-    <module>contractproducer</module>
     <module>weather</module>
   </modules>
   <parent>
